@@ -1,1 +1,7 @@
-<p>filter works!</p>
+<article class="filter" (change)="onChange(selected.value)">
+    <label class="filter-label">Filter by type</label>
+    <select class="filter-select" #selected>
+        <option></option>
+        <option *ngFor="let type of (types$ | async)">{{type.name}}</option>
+    </select>
+</article>

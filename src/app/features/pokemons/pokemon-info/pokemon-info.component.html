@@ -1,1 +1,20 @@
-<p>pokemon-info works!</p>
+<article class="chosen" [ngClass]="{is_visible: visible}">
+    <img class="chosen-image" src="../../../../assets/images/pokemon_default.png" alt="">
+    <h3 class="chosen-title">{{pokemon.name}} #{{pokemon.id | id}}</h3>
+    <section class="stat">
+        <label class="stat-label">Type</label>
+        <p class="stat-value">{{pokemon.types[0].type.name}}</p>
+    </section>
+    <section class="stat" *ngFor="let statResponse of pokemon.stats">
+        <label class="stat-label">{{statResponse.stat.name}}</label>
+        <p class="stat-value">{{statResponse.base_stat}}</p>
+    </section>
+    <section class="stat">
+        <label class="stat-label">Weight</label>
+        <p class="stat-value">{{pokemon.weight}}</p>
+    </section>
+    <section class="stat move">
+        <label class="stat-label">Total moves</label>
+        <p class="stat-value">{{pokemon.moves.length}}</p>
+    </section>
+</article>

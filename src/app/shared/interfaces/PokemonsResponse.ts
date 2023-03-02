@@ -1,4 +1,4 @@
 import { Pokemon } from 'src/app/shared/interfaces/Pokemon';
-export interface ApiResponse {
+export interface PokemonsResponse {
     results: Array<Pokemon>
 }

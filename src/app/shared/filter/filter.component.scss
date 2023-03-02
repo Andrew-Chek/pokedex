@@ -1,0 +1,10 @@
+.filter {
+    margin: 10px;
+    &-label {
+        margin: 0 10px;
+    }
+    &-select {
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+}

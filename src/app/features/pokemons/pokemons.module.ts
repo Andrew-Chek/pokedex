@@ -1,3 +1,4 @@
+import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PokemonComponent } from './pokemon/pokemon.component';
@@ -13,7 +14,8 @@ import { PokemonsComponent } from './pokemons.component';
     PokemonsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     PokemonsComponent

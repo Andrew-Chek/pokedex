@@ -1,3 +1,9 @@
-<main class="pokemons">
-    <p>hello pokemons!</p>
-</main>
+<article class="pokemons">
+    <app-filter class="pokemons-filter" (filterChanged)="filterPokemons($event)"></app-filter>
+    <div class="pokemons-message" [ngClass]="{error: filterError}">There are no pokemons by this type, so filter was declined</div>
+    <section class="pokemons-main">
+        <app-pokemon *ngFor="let pokemon of pokemons" [pokemon]="pokemon" (click)="setPokemon(pokemon)"></app-pokemon>
+    </section>
+    <app-pokemon-info class="pokemons-chosen" [pokemon]="chosenPokemon" [visible]="isVisible"></app-pokemon-info>
+    <app-button class="pokemons-button" buttonText="Load More" (buttonClicked)="loadNextPokemons()"></app-button>
+</article>

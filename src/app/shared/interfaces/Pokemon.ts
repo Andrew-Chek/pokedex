@@ -1,6 +1,12 @@
-import { PokemonType } from './PokemonType';
+import { MoveResponse } from './MoveResponse';
+import { StatResponse } from './StatResponse';
+import { TypeResponse } from './TypeResponse';
 export interface Pokemon {
-    nae: string,
+    name: string,
     url: string,
-    types: Array<PokemonType>
+    types: Array<TypeResponse>
+    weight: number
+    stats: Array<StatResponse>
+    moves: Array<MoveResponse>
+    id: number
 }
