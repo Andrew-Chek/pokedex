@@ -1,3 +1,4 @@
+import { PokemonType } from './../../../shared/interfaces/PokemonType';
 import { PokemonApiService } from './../services/pokemon-api/pokemon-api.service';
 import { Pokemon } from './../../../shared/interfaces/Pokemon';
 import { Component, Input, OnInit } from '@angular/core';
@@ -21,14 +22,9 @@ export class PokemonComponent implements OnInit {
   constructor(private pokemonApiService: PokemonApiService) { }
 
   ngOnInit(): void {
-    const colorTypes: Array<{type:string, color: string}> = [];
     this.pokemonApiService.types$.pipe(
       map(response => {
-        for(let i = 0; i < response.results.length; i++)
-        {
-          colorTypes.push({type: response.results[i].name, color: colors[i]})
-        }
-        return colorTypes;
+        return this.setColorTypes(response.results);
       })
     ).subscribe((colorTypes => {
       this.pokemon.types.forEach(typeResponse => {
@@ -39,6 +35,15 @@ export class PokemonComponent implements OnInit {
         })
       })
     }))
+  }
+
+  setColorTypes(types: PokemonType[]) {
+    const colorTypes: Array<{type:string, color: string}> = [];
+    for(let i = 0; i < types.length; i++)
+    {
+      colorTypes.push({type: types[i].name, color: colors[i]})
+    }
+    return colorTypes;
   }
 
   setGradient(color: string)
