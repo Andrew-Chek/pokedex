@@ -43,6 +43,11 @@ export class PokemonsComponent implements OnInit {
       pokemon.stats[i].stat.name = rightNames[i];
     }
     this.isVisible = true;
+    window.scroll({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
   }
 
   filterPokemons(typeName: string) {
@@ -50,6 +55,7 @@ export class PokemonsComponent implements OnInit {
     if(typeName == '')
     {
       this.pokemons = defaultPokemons;
+      this.filterError = false;
       return
     }
     const filteredPokemons = this.pokemons?.filter(pokemon => {
@@ -61,7 +67,6 @@ export class PokemonsComponent implements OnInit {
       })
       return checked;
     })
-    console.log(filteredPokemons?.length)
     if(filteredPokemons?.length == 0)
     {
       this.filterError = true;

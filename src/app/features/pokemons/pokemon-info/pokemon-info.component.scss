@@ -42,3 +42,9 @@
 .is_visible {
     display: flex;
 }
+
+@media (max-width: 768px) {
+    .chosen {
+        margin-top: 20px;
+    }
+}

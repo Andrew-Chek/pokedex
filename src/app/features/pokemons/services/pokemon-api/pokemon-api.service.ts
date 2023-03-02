@@ -49,6 +49,5 @@ export class PokemonApiService {
     this.getPokemons(this.counter).subscribe(result => {
       this.pokemons$.next(result)
     })
-    this.pokemons$.subscribe(console.log)
   }
 }

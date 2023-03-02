@@ -32,3 +32,23 @@
     display: block;
     color: red;
 }
+@media (max-width: 768px) {
+    .pokemons {
+        display: grid;
+        grid-template-areas:
+        "chosen" 
+        "filter"
+        "message"
+        "main"
+        "button";
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 512px) {
+    .pokemons {
+        &-main {
+            justify-content: center;
+        }
+    }
+}

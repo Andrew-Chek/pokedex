@@ -25,3 +25,14 @@
         margin: 5px;
     }
 }
+
+@media (max-width: 1024px) {
+    .pokemon {
+        width: 200px;
+        margin: 10px;
+        padding: 8px 8px 30px 8px;
+        &-image {
+            width: 80%;
+        }
+    }
+}
